@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            } <!--не двойные-->
+
+            table, th, td {
+                border: 1px solid black;
+                border-radius: 10px;
+            } <!--двойные с овальным внутри-->
+
+            th, td {
+                border: 1px solid black;
+                border-radius: 10px;
+            } <!--не двойные но овальные-->
+
+            tr:nth-child(even) {
+                background-color: #D6EEEE;
+            }  <!--покраска дочерних строк через один-->
+
+            td:nth-child(even), th:nth-child(even) {
+                background-color: #D6EEEE;
+            }  <!--покраска дочерних столбцов через один-->
+
+            tr:nth-child(even) {
+                background-color: rgba(150, 212, 212, 0.4);
+            }
+            th:nth-child(even),td:nth-child(even) {
+                background-color: rgba(150, 212, 212, 0.4);
+            } <!--покраска в шахматном порядке-->
+
+            tr {
+                border-bottom: 1px solid #ddd;
+            } <!--убирает бортики по вертикали-->
+        </style>
+    </head>
+<body>
+    <table>
+  <tr>
+    <th colspan="2">Name</th>
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>43</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>57</td>
+  </tr>
+</table>
+
+<table>
+    <tr>
+      <th>Name</th>
+      <td>Jill</td>
+    </tr>
+    <tr>
+      <th rowspan="2">Phone</th>
+      <td>555-1234</td>
+    </tr>
+    <tr>
+      <td>555-8745</td>
+  </tr>
+  </table>
+
+  <table>
+  <colgroup>
+    <col span="2" style="background-color: #D6EEEE">
+  </colgroup>
+  <tr>
+    <th>MON</th>
+    <th>TUE</th>
+    <th>WED</th>
+    <th>THU</th>
+....
+
+
+</body>
+</html>
