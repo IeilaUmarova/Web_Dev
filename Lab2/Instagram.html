@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Instagram</title>
+        <meta charset="utf-8">
+        <style>
+            .login{
+                background-color: white;
+                width: 350px;
+                border-color: darkgray;
+                text-align: center;
+                margin-left: 535px;
+                margin-top: 33px;
+            }
+            .info{
+                display: flex;
+                display: block;
+                border: 1px solid #EBEBEB;
+                padding: 10px;
+            }
+            h1{
+                font-family: cursive;
+                font-weight: bold;
+                font-size: 43px;
+            }
+            .input{
+                width: 75%;
+                border-radius: 3px;
+                border: 1px solid;
+                border-color: darkgray;
+                padding: 10px;
+                font-size: 12px;
+                margin-bottom: 5px;
+            }
+            #button-one{
+                width: 82%;
+                background-color: #80C4E9;
+                padding: 8px;
+                border: 1px solid;
+                border-radius: 10px;
+                font-size: 14px;
+                font-weight: bold;
+                color: white;
+                margin-top: 9px;
+                margin-bottom: 15px;
+            }
+            #link-one{
+                color: #006BFF;
+                font-size: 13px;
+                font-weight: bold;
+                text-decoration: none;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                
+            }
+            #link-one:hover{
+                color: black;
+            }
+            #img-one{
+                width: 20px;
+            }
+            #link-two{
+                color: black;
+                text-decoration: none;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 13px;
+            }
+            .sign-up{
+                display: block;
+                border: 1px solid #EBEBEB;
+                width: 338px;
+                text-align: center;
+                margin-left: 535px;
+                margin-top: 10px;
+                padding: 5px;
+            }
+            p{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 15px;
+            }
+            #link-three{
+                text-decoration: none;
+                color: #006BFF;
+                font-weight: bold;
+            }
+            span{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-weight: bold;
+                font-size: 12px;
+                color: #686D76;
+            }
+            span::after,
+            span::before{
+                content: '';
+                flex: 1;
+                border-bottom: 1px solid #686D76;
+                margin: 0 10px;
+            }
+            #text-one{
+                margin-left: 670px;
+                margin-top: 19px;
+                font-size: 14px;
+            }
+            .apps{
+                margin-left: 578px;
+            }
+            .button-two{
+                background-color: black;
+                color: white;
+                border: 1px solid;
+                border-radius: 5px;
+                width: 130px;
+                height: 40px;
+            }
+            .img-two{
+                width: 30px;
+                float: left;
+            }
+            .texts{
+                float: right;
+                margin-top: -8px;
+            }
+            .text-two{
+                font-size: 10px;
+            }
+            .text-three{
+                font-size: 15px;
+                margin-top: -10px;
+            }
+            .links{
+                text-align: center;
+                margin-top: 100px;
+            }
+            .link{
+                color: #A9A9A9;
+                font-size: 13px;
+                text-decoration: none;
+                margin-left: 10px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            .link:hover{
+                text-decoration: underline;
+            }
+            #meta{
+                color: #A9A9A9;
+                font-size: 12px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class = login>
+            <form class = "info">
+                <h1>Instagram</h1>
+                <input type="text" placeholder="Phone number, username or email address" class = "input"><br>
+                <input type="password" placeholder="password" class = "input"><br>
+                <button id = "button-one">Log in</button><br>
+                <span>OR</span>
+                <br><br>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/2023_Facebook_icon.svg/480px-2023_Facebook_icon.svg.png" alt="facebook" id = "img-one">
+                <a href="#" id = "link-one">Log in with Facebook</a><br><br>
+                <a href="#" id = "link-two">Forgotten your password?</a><br><br>
+            </form>
+        </div>
+        <div class = "sign-up">
+            <p>Don't have an account? <a href="#" id = "link-three">Sign up</a></p>
+        </div>
+        <p id = "text-one">Get the app.</p>
+        <div class = "apps">
+            <a href="#">
+                <button class = "button-two">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRsP-EH-Fc-gjQMFgxj4g1pkFGVCK8Y2deHA&s" alt="app store" class = "img-two">
+                    <div class = "texts"> 
+                        <p class = "text-two">Download on the</p>
+                        <p class = "text-three">App Store</p>
+                    </div>
+                </button>
+            </a>
+            <a href="#">
+                <button class = "button-two">
+                    <img src="https://static-00.iconduck.com/assets.00/google-play-icon-239x256-sm9pj90g.png" alt="google play" class = "img-two">
+                    <div class = "texts">
+                        <p class = "text-two">GET IT ON</p>
+                        <p class = "text-three">Google play</p>
+                    </div>
+                </button>
+            </a>
+        </div>
+        <div class = "links">
+            <a href="#" class = "link">Meta</a>
+            <a href="#" class = "link">About</a>
+            <a href="#" class = "link">Blog</a>
+            <a href="#" class = "link">Jobs</a>
+            <a href="#" class = "link">Help</a>
+            <a href="#" class = "link">API</a>
+            <a href="#" class = "link">Privacy</a>
+            <a href="#" class = "link">Terms</a>
+            <a href="#" class = "link">Locations</a>
+            <a href="#" class = "link">Instagram Lite</a>
+            <a href="#" class = "link">Threads</a>
+            <a href="#" class = "link">Contact uploading and non-users</a>
+            <a href="#" class = "link">Meta Verified</a>
+            <br>
+            <p id = "meta">© 2025 Instagram from Meta</p>
+        </div>
+    </body>
+</html>
