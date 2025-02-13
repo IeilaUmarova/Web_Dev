@@ -1,0 +1,20 @@
+<meta charset="UTF-8">
+  <div class="products-container">
+    <div class="product" *ngFor="let product of products">
+      <img [src]="product.image" [alt]="product.name" class="product-image" />
+      <h2>{{ product.name }}</h2>
+      <p>{{ product.description }}</p>
+      <p>⭐ {{ product.rating }}/5</p>
+      <a [href]="product.link" target="_blank" class="product-link">Купить</a>
+      <div class="buttons">
+        <button (click)="share(product, 'whatsapp')">
+          <img src="https://img.icons8.com/?size=512&id=16713&format=png" class = "icon">
+          Поделиться в WhatsApp
+        </button>
+        <button (click)="share(product, 'telegram')">
+          <img src="https://pngicon.ru/file/uploads/telegram.png" class = "icon">
+          Поделиться в Telegram
+        </button>
+      </div>
+    </div>
+  </div>
