@@ -1,0 +1,19 @@
+<meta charset="UTF-8">
+<div>
+  <h2>Select a Category</h2>
+  <div class = "category">
+    <button *ngFor = "let category of categories" (click) = "selectCategory(category)">
+      {{category.name}}
+    </button>
+  </div>
+
+  <div *ngIf = "selectedCategory">
+    <h2>{{selectedCategory.name}} Products</h2>
+    <app-product-list
+    [products] = "selectedCategory.products"
+    (remove) = removeProduct($event)
+    (like) = likeProduct($event)>
+    </app-product-list>
+  </div>
+</div>
+  
