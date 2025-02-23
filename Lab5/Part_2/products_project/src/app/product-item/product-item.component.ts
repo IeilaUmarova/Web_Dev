@@ -12,11 +12,12 @@ interface Product {
 
 @Component({
   selector: 'app-product-item',
+  standalone: true,
   templateUrl: './product-item.component.html',
-  styleUrl: './product-item.component.css'
+  styleUrls: ['./product-item.component.css']
 })
 export class ProductItemComponent {
-  @Input() product!: Product;
+  @Input() product!: any;
   @Output() remove = new EventEmitter<number>();
   @Output() like = new EventEmitter<Product>();
 
@@ -26,5 +27,18 @@ export class ProductItemComponent {
 
   onLike() {
     this.like.emit(this.product);
+  }
+
+  share(product: any, platform: 'whatsapp' | 'telegram') {
+    const encodedUrl = encodeURIComponent(product.link);
+    let shareUrl = '';
+
+    if (platform === 'whatsapp') {
+      shareUrl = `https://api.whatsapp.com/send?text=${encodedUrl}`;
+    } else if (platform === 'telegram') {
+      shareUrl = `https://t.me/share/url?url=${encodedUrl}`;
+    }
+
+    window.open(shareUrl, '_blank');
   }
 }

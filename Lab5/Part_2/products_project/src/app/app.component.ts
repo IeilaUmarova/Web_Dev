@@ -1,6 +1,7 @@
 
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ProductListComponent } from './product-list/product-list.component';
 
 interface Product {
   id: number;
@@ -18,9 +19,9 @@ interface Category {
 }
 
 @Component({
-  selector: 'app',
+  selector: 'app-root',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ProductListComponent],
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
 })
@@ -28,7 +29,7 @@ interface Category {
 export class AppComponent {
   categories: Category[] = [
     {
-      name: 'gadgets',
+      name: 'Gadgets',
       products: [
         { 
           id: 1, 
@@ -60,7 +61,7 @@ export class AppComponent {
       ]
     },
     {
-      name: 'technology',
+      name: 'Technology',
       products: [
         {
           id: 1,
@@ -92,7 +93,7 @@ export class AppComponent {
       ]
     },
     {
-      name: 'appliances',
+      name: 'Appliances',
       products: [
         {
           id: 1,
@@ -124,7 +125,7 @@ export class AppComponent {
       ]
     },
     {
-      name: 'furniture',
+      name: 'Furniture',
       products: [
         {
           id: 1,
@@ -156,7 +157,7 @@ export class AppComponent {
       ]
     },
     {
-      name: 'dishes',
+      name: 'Dishes',
       products: [
         {
           id: 1,
@@ -191,6 +192,10 @@ export class AppComponent {
 
   selectedCategory: Category | null = null;
 
+  get products() {
+    return this.selectedCategory ? this.selectedCategory.products : [];
+  }  
+
   selectCategory(category: Category){
     this.selectedCategory = category;
   }
@@ -205,16 +210,4 @@ export class AppComponent {
     product.likes += 1;
   }
 
-  share(product: any, platform: 'whatsapp' | 'telegram') {
-    const encodedUrl = encodeURIComponent(product.link);
-    let shareUrl = '';
-
-    if (platform === 'whatsapp') {
-      shareUrl = `https://api.whatsapp.com/send?text=${encodedUrl}`;
-    } else if (platform === 'telegram') {
-      shareUrl = `https://t.me/share/url?url=${encodedUrl}`;
-    }
-
-    window.open(shareUrl, '_blank');
-  }
 }
