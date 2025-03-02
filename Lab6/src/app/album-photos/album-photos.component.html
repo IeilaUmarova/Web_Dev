@@ -1,0 +1,12 @@
+<h2>Album Photos</h2>
+<div *ngIf="error" class="error">{{ error }}</div>
+<div *ngIf="loading">Loading...</div>
+<div *ngIf="!loading && photos.length">
+  <div class="gallery">
+    <div *ngFor="let photo of photos" class="photo-card">
+      <img [src]="photo.thumbnailUrl" [alt]="photo.title">
+      <p>{{ photo.title }}</p>
+    </div>
+  </div>
+</div>
+<button (click)="goBack()">Return</button>
